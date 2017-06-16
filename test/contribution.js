@@ -355,6 +355,24 @@ contract("StatusContribution", function(accounts) {
             devTokensHolder.contract.collectTokens.getData(),
             {from: addressDevs});
 
+        await multisigDevs.submitTransaction(
+            devTokensHolder.address,
+            0,
+            devTokensHolder.contract.collectTokens.getData(),
+            {from: addressDevs});
+
+        await multisigDevs.submitTransaction(
+            devTokensHolder.address,
+            0,
+            devTokensHolder.contract.collectTokens.getData(),
+            {from: addressDevs});
+
+        await multisigDevs.submitTransaction(
+            devTokensHolder.address,
+            0,
+            devTokensHolder.contract.collectTokens.getData(),
+            {from: addressDevs});
+
         const balance = await snt.balanceOf(multisigDevs.address);
 
         const calcTokens = web3.fromWei(totalSupply.mul(0.20).mul(0.5)).toNumber();
